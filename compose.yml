@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql:8.0.23
+    container_name: invox_test_db
+    platform: linux/amd64
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: 'invox_test_db'
+      TZ: 'Asia/Tokyo' 
+    ports:
+      - "3306:3306"
+    volumes:
+      - .docker/volumes/mysql:/var/lib/mysql
